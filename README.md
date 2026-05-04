@@ -17,3 +17,117 @@ to provide a **risk-based analysis** of system security.
 - Integrate rule-based and intelligent detection methods  
 
 ## 🧠 System Architecture
+User Input (File / URL / IP / Login)
+↓
+Feature Extraction
+↓
+Rule-Based Detection Layer
+↓
+Machine Learning (Optional)
+↓
+Risk Scoring Engine
+↓
+Final Threat Output
+
+
+---
+
+## 🚀 Features
+
+### 📁 File Malware Detection
+- Uses **SHA-256 hashing**
+- Detects known malicious files using signature matching  
+
+---
+
+### 🌐 Phishing URL Detection
+- Extracts URL features:
+  - Length  
+  - Special characters  
+  - Protocol (HTTP/HTTPS)  
+- Identifies suspicious patterns  
+
+---
+
+### 🖥️ Port Scanner
+- Scans common ports (21, 22, 80, 443)  
+- Detects open ports and potential vulnerabilities  
+
+---
+
+### 🔐 Login Attack Detection
+- Monitors login attempts  
+- Detects brute-force attacks based on:
+  - Attempt count  
+  - Failed attempts  
+
+---
+
+### 🧠 Risk Scoring Engine
+- Aggregates all module outputs  
+- Calculates final risk level:
+  - 🟢 Low  
+  - 🟡 Medium  
+  - 🔴 High  
+
+---
+
+## 🧱 Project Structure
+
+cyber-threat-system/
+│
+├── main.py # Main execution file
+│
+├── detectors/ # Detection modules
+│ ├── file_detector.py
+│ ├── url_detector.py
+│ ├── port_detector.py
+│ ├── login_detector.py
+│
+├── risk_engine.py # Final risk calculation
+├── logs.txt # Stores detection logs
+│
+├── models/ # ML models (optional)
+│ └── phishing_model.pkl
+│
+├── static/ # Frontend (future)
+│
+├── templates/ # HTML UI (future)
+│
+└── README.md
+
+
+---
+
+## ⚙️ Technologies Used
+
+| Category        | Tools/Technologies |
+|----------------|------------------|
+| Programming    | Python           |
+| Security       | Hashlib (SHA-256)|
+| Networking     | Socket           |
+| Machine Learning | Scikit-learn (optional) |
+| Frontend (Future) | HTML, CSS, JavaScript |
+| Backend (Future) | Flask |
+
+---
+
+## 🚀 Installation & Setup
+
+### 1. Clone Repository
+```bash
+git clone <your-repo-link>
+cd cyber-threat-system
+
+## sample:
+
+⚠️ Phishing Suspected
+Open Ports: [80, 443]
+⚠️ Malware Detected
+⚠️ Brute Force Suspected
+
+FINAL → 🔴 HIGH RISK
+
+## Author
+Harish Maduraimani
+B.E. Electronics and Communication Engineering
