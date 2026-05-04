@@ -119,7 +119,9 @@ cyber-threat-system/
 git clone <your-repo-link>
 cd cyber-threat-system
 
-## sample:
+---
+
+ sample:
 
 ⚠️ Phishing Suspected
 Open Ports: [80, 443]
@@ -128,6 +130,6 @@ Open Ports: [80, 443]
 
 FINAL → 🔴 HIGH RISK
 
-## Author
+ Author
 Harish Maduraimani
 B.E. Electronics and Communication Engineering
