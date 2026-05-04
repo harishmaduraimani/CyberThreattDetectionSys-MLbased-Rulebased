@@ -1,0 +1,137 @@
+[
+    {
+        "timestamp": "2026-05-04 09:23:27",
+        "scan_type": "url",
+        "input": "http://127.0.0.1:5000/",
+        "detector": "URL Phishing Detector",
+        "risk_score": 50,
+        "verdict": "Dangerous",
+        "reason": "URL uses HTTP instead of HTTPS; URL uses an IP address instead of a domain name; Rule-based URL risk score: 50; ML phishing probability score: 41; Combined URL risk score: 50",
+        "parameters": {
+            "url_length": 22,
+            "uses_http": 1,
+            "uses_https": 0,
+            "uses_ip": 1,
+            "suspicious_word_count": 0,
+            "has_at_symbol": 0,
+            "dot_count": 3,
+            "hyphen_count": 0,
+            "path_length": 1,
+            "domain_age_days": null,
+            "redirect_count": 0,
+            "final_url": "http://127.0.0.1:5000/",
+            "rule_based_score": 50,
+            "ml_risk_score": 41,
+            "final_score": 50
+        }
+    },
+    {
+        "timestamp": "2026-05-04 09:24:02",
+        "scan_type": "file",
+        "input": "samples.txt.txt",
+        "detector": "File Malware Detector",
+        "risk_score": 40,
+        "verdict": "Dangerous",
+        "reason": "File has suspicious extension: .txt; File uses double extension",
+        "parameters": {
+            "file_name": "samples.txt.txt",
+            "file_extension": ".txt",
+            "file_size_bytes": 17,
+            "sha256_hash": "7c497efe580aa9fae3b1b5b67d944684f866adc76549de14d422a5004bcb02b0",
+            "has_double_extension": true,
+            "hash_matched_malware_database": false
+        }
+    },
+    {
+        "timestamp": "2026-05-04 09:32:24",
+        "scan_type": "port",
+        "input": {
+            "target": "127.0.0.1",
+            "ports": [
+                8000
+            ]
+        },
+        "detector": "Port Scanner Detector",
+        "risk_score": 10,
+        "verdict": "Dangerous",
+        "reason": "Open port found: 8000 (Unknown Service)",
+        "parameters": {
+            "target_host": "127.0.0.1",
+            "scanned_ports": [
+                8000
+            ],
+            "open_ports": [
+                {
+                    "port": 8000,
+                    "service": "Unknown Service"
+                }
+            ],
+            "open_port_count": 1
+        }
+    },
+    {
+        "timestamp": "2026-05-04 13:07:19",
+        "scan_type": "file",
+        "input": "samples.txt.txt",
+        "detector": "File Malware Detector",
+        "risk_score": 40,
+        "verdict": "Dangerous",
+        "reason": "File has suspicious extension: .txt; File uses double extension",
+        "parameters": {
+            "file_name": "samples.txt.txt",
+            "file_extension": ".txt",
+            "file_size_bytes": 17,
+            "sha256_hash": "7c497efe580aa9fae3b1b5b67d944684f866adc76549de14d422a5004bcb02b0",
+            "has_double_extension": true,
+            "hash_matched_malware_database": false
+        }
+    },
+    {
+        "timestamp": "2026-05-04 13:10:47",
+        "scan_type": "url",
+        "input": "http://127.0.0.1:5000/",
+        "detector": "URL Phishing Detector",
+        "risk_score": 50,
+        "verdict": "Dangerous",
+        "reason": "URL uses HTTP instead of HTTPS; URL uses an IP address instead of a domain name; Rule-based URL risk score: 50; ML phishing probability score: 41; Combined URL risk score: 50",
+        "parameters": {
+            "url_length": 22,
+            "uses_http": 1,
+            "uses_https": 0,
+            "uses_ip": 1,
+            "suspicious_word_count": 0,
+            "has_at_symbol": 0,
+            "dot_count": 3,
+            "hyphen_count": 0,
+            "path_length": 1,
+            "domain_age_days": null,
+            "redirect_count": 0,
+            "final_url": "http://127.0.0.1:5000/",
+            "rule_based_score": 50,
+            "ml_risk_score": 41,
+            "final_score": 50
+        }
+    },
+    {
+        "timestamp": "2026-05-04 13:14:00",
+        "scan_type": "port",
+        "input": {
+            "target": "127.0.0.1",
+            "ports": [
+                8000
+            ]
+        },
+        "detector": "Port Scanner Detector",
+        "risk_score": 0,
+        "verdict": "Dangerous",
+        "reason": "No open common ports found",
+        "parameters": {
+            "target_host": "127.0.0.1",
+            "scanned_ports": [
+                8000
+            ],
+            "open_ports": [],
+            "open_port_count": 0
+        }
+    }
+]

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Intelligent Cyber Threat Detection System</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar" id="sidebar">
+      <div class="brand">
+        <div class="brand-mark">ICT</div>
+        <div class="brand-text">
+          <h1>Cyber Threat</h1>
+          <p>Detection System</p>
+        </div>
+      </div>
+
+      <nav class="nav">
+        <button class="nav-item active" data-tab="file">
+          <span class="nav-icon">📄</span> File Malware
+        </button>
+        <button class="nav-item" data-tab="url">
+          <span class="nav-icon">🔗</span> URL Detector
+        </button>
+        <button class="nav-item" data-tab="ports">
+          <span class="nav-icon">🛰️</span> Port Scanner
+        </button>
+        <button class="nav-item" data-tab="ai">
+          <span class="nav-icon">🤖</span> AI Assistant
+        </button>
+        <button class="nav-item" data-tab="history">
+          <span class="nav-icon">🕓</span> History
+        </button>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="status-dot"></div>
+        <span>System online</span>
+      </div>
+    </aside>
+
+    <main class="workspace">
+      <header class="topbar">
+        <button class="menu-btn" id="menuBtn" aria-label="Toggle sidebar">☰</button>
+        <div class="topbar-title" id="topbarTitle">File Malware Scanner</div>
+        <div class="topbar-meta" id="topbarMeta">Static analysis · SHA-256</div>
+      </header>
+
+      <!-- FILE TAB -->
+      <section class="tab-panel active" id="tab-file">
+        <div class="panel-grid">
+          <div class="card">
+            <h2>Scan a file</h2>
+            <p class="muted">Upload a file to perform static malware analysis.</p>
+            <form id="fileForm" class="form">
+              <label class="file-drop" for="fileInput">
+                <input type="file" id="fileInput" name="file" required />
+                <span id="fileLabel">Choose a file to upload</span>
+              </label>
+              <button type="submit" class="btn-primary">Scan File</button>
+            </form>
+            <div class="loading" id="fileLoading" hidden>Scanning file…</div>
+            <div class="error" id="fileError" hidden></div>
+          </div>
+          <div class="card result-card">
+            <h2>Result</h2>
+            <div id="fileResult" class="result-empty">No scan yet.</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- URL TAB -->
+      <section class="tab-panel" id="tab-url">
+        <div class="panel-grid">
+          <div class="card">
+            <h2>Analyze a URL</h2>
+            <p class="muted">Run rule-based and ML-based phishing detection.</p>
+            <form id="urlForm" class="form">
+              <label for="urlInput">URL</label>
+              <input type="url" id="urlInput" name="url" placeholder="https://example.com/path" required />
+              <button type="submit" class="btn-primary">Scan URL</button>
+            </form>
+            <div class="loading" id="urlLoading" hidden>Analyzing URL…</div>
+            <div class="error" id="urlError" hidden></div>
+          </div>
+          <div class="card result-card">
+            <h2>Result</h2>
+            <div id="urlResult" class="result-empty">No scan yet.</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PORTS TAB -->
+      <section class="tab-panel" id="tab-ports">
+        <div class="panel-grid">
+          <div class="card">
+            <h2>Port scan</h2>
+            <p class="muted">Discover open services on a target host.</p>
+            <form id="portForm" class="form">
+              <label for="hostInput">Target host</label>
+              <input type="text" id="hostInput" name="host" placeholder="scanme.example.com or 10.0.0.1" required />
+              <label for="portsInput">Ports (comma separated, optional)</label>
+              <input type="text" id="portsInput" name="ports" placeholder="22, 80, 443" />
+              <button type="submit" class="btn-primary">Start Scan</button>
+            </form>
+            <div class="loading" id="portLoading" hidden>Scanning ports…</div>
+            <div class="error" id="portError" hidden></div>
+          </div>
+          <div class="card result-card">
+            <h2>Result</h2>
+            <div id="portResult" class="result-empty">No scan yet.</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- AI TAB -->
+      <section class="tab-panel chat-panel" id="tab-ai">
+        <div class="chat">
+          <div class="chat-messages" id="chatMessages"></div>
+          <form id="chatForm" class="chat-input">
+            <textarea id="chatInput" rows="1" placeholder="Ask about a threat, indicator, or scan result…"></textarea>
+            <button type="submit" class="btn-primary" id="chatSend">Send</button>
+          </form>
+        </div>
+      </section>
+
+      <!-- HISTORY TAB -->
+      <section class="tab-panel" id="tab-history">
+        <div class="panel-grid history-grid">
+          <div class="card">
+            <div class="card-head">
+              <h2>Recent scans</h2>
+              <button class="btn-ghost" id="refreshHistory">Refresh</button>
+            </div>
+            <div class="loading" id="historyLoading" hidden>Loading history…</div>
+            <div class="error" id="historyError" hidden></div>
+            <ul class="history-list" id="historyList"></ul>
+          </div>
+          <div class="card result-card">
+            <h2>Details</h2>
+            <div id="historyResult" class="result-empty">Select a scan to view details.</div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>
