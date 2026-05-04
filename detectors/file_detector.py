@@ -68,7 +68,6 @@ def detect_file(file_path, hash_file_path):
     else:
         perdict = "Safe"
 
-    # If no suspicious reason was found, explain that clearly
     if not reasons:
         reasons.append("No suspicious file indicators found")
 

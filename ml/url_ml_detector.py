@@ -7,7 +7,6 @@ MODEL_PATH = "models/url_phishing_model.joblib"
 
 
 def features_to_list(features):
-    # Convert feature dictionary into a fixed-order list for ML
     return [
         features["url_length"],
         features["uses_http"],
@@ -34,9 +33,5 @@ def predict_ml_url_risk(features):
 
     # Model expects a list of rows, so wrap feature_list inside another list
     phishing_probability = model.predict_proba([feature_list])[0][1]
-
-    # Convert probability from 0.0-1.0 into 0-100 risk score
     ml_risk_score = int(phishing_probability * 100)
-
-    # Return score and explanation
     return ml_risk_score, f"ML phishing probability score: {ml_risk_score}"

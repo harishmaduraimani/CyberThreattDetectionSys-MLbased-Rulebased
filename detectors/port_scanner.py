@@ -57,7 +57,6 @@ def scan_ports(target_host, ports):
     for port in ports:
         # Scan the current port
         is_open = scan_port(target_host, port)
-
         # If port is open, save it
         if is_open:
             service_name = COMMON_PORTS.get(port, "Unknown Service")
@@ -72,53 +71,33 @@ def scan_ports(target_host, ports):
 
 
 def detect_open_ports(target_host, ports=None):
-    # If no custom ports are given, scan common ports
     if ports is None:
         ports = list(COMMON_PORTS.keys())
 
     # Scan the selected ports
     open_ports = scan_ports(target_host, ports)
-
-    # Start risk score at zero
     risk_score = 0
-
-    # Store explanation messages
     reasons = []
-
-    # If no ports are open, this is low risk
     if not open_ports:
         reasons.append("No open common ports found")
 
     # Analyze each open port
     for item in open_ports:
-        # Get port number from result
         port = item["port"]
-
-        # Get service name from result
         service = item["service"]
-
-        # Add a basic risk score for every open port
         risk_score += 10
         reasons.append(f"Open port found: {port} ({service})")
-
-        # Add extra risk for sensitive ports
         if port in RISKY_PORTS:
             risk_score += 20
             reasons.append(RISKY_PORTS[port])
-
-    # Keep risk score between 0 and 100
     if risk_score > 100:
         risk_score = 100
-
-    # Decide final verdict
     if risk_score >= 70:
         verdict = "Dangerous"
     elif risk_score >= 30:
         verdict = "Suspicious"
     else:
         verdict = "Safe"
-
-    # Return structured detector result
     return DetectionResult(
         detectorname="Port Scanner Detector",
         riskscore=risk_score,
