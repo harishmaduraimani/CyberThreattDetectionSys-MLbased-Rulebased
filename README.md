@@ -18,15 +18,15 @@ to provide a **risk-based analysis** of system security.
 
 ## 🧠 System Architecture
 User Input (File / URL / IP / Login)
-↓
+-
 Feature Extraction
-↓
+-
 Rule-Based Detection Layer
-↓
+-
 Machine Learning (Optional)
-↓
+-
 Risk Scoring Engine
-↓
+-
 Final Threat Output
 
 
@@ -71,32 +71,6 @@ Final Threat Output
   - 🔴 High  
 
 ---
-
-## 🧱 Project Structure
-
-cyber-threat-system/
-│
-├── main.py # Main execution file
-│
-├── detectors/ # Detection modules
-│ ├── file_detector.py
-│ ├── url_detector.py
-│ ├── port_detector.py
-│ ├── login_detector.py
-│
-├── risk_engine.py # Final risk calculation
-├── logs.txt # Stores detection logs
-│
-├── models/ # ML models (optional)
-│ └── phishing_model.pkl
-│
-├── static/ # Frontend (future)
-│
-├── templates/ # HTML UI (future)
-│
-└── README.md
-
-
 ---
 
 ## ⚙️ Technologies Used
